@@ -46,7 +46,6 @@ Windows 10 10.0
 
 之前有老铁说要请我喝杯咖啡，所以厚颜无耻的放个二维码
 
-![支付宝](https://github.com/techGay/v9porn/blob/master/img/alipay.jpg)
-![微信](https://github.com/techGay/v9porn/blob/master/img/wechatpay.png)
+![支付宝](https://github.com/techGay/v9porn/blob/master/img/alipay.jpg) ![微信](https://github.com/techGay/v9porn/blob/master/img/wechatpay.png)
 ### 声明
 本项目仅做技术交流使用，任何人或组织无论以何种形式将其用在其他任何地方由此引发的各种问题均与本人无关
