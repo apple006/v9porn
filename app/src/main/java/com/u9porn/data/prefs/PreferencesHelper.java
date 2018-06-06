@@ -101,4 +101,8 @@ public interface PreferencesHelper {
     void setCustomDownloadVideoDirPath(String customDirPath);
 
     String getCustomDownloadVideoDirPath();
+
+    boolean isShowUrlRedirectTipDialog();
+
+    void setShowUrlRedirectTipDialog(boolean showUrlRedirectTipDialog);
 }

@@ -12,9 +12,9 @@ import com.sdsmdg.tastytoast.TastyToast;
 import com.trello.rxlifecycle2.LifecycleProvider;
 import com.u9porn.data.DataManager;
 import com.u9porn.data.db.entity.V9PornItem;
+import com.u9porn.data.db.entity.VideoResult;
 import com.u9porn.data.model.User;
 import com.u9porn.data.model.VideoComment;
-import com.u9porn.data.db.entity.VideoResult;
 import com.u9porn.di.PerActivity;
 import com.u9porn.exception.VideoException;
 import com.u9porn.rxjava.CallBackWrapper;
@@ -22,7 +22,6 @@ import com.u9porn.rxjava.RetryWhenProcess;
 import com.u9porn.rxjava.RxSchedulersHelper;
 import com.u9porn.ui.download.DownloadPresenter;
 import com.u9porn.ui.porn9video.favorite.FavoritePresenter;
-import com.u9porn.utils.UserHelper;
 
 import java.util.Date;
 import java.util.List;

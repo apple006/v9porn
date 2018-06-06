@@ -157,4 +157,14 @@ public class MainPresenter extends MvpBasePresenter<MainView> implements IMain {
     public boolean isUserLogin() {
         return dataManager.isUserLogin();
     }
+
+    @Override
+    public void setPorn9VideoAddress(String porn9VideoAddress) {
+        dataManager.setPorn9VideoAddress(porn9VideoAddress);
+    }
+
+    @Override
+    public void setPorn9ForumAddress(String porn9ForumAddress) {
+        dataManager.setPorn9ForumAddress(porn9ForumAddress);
+    }
 }

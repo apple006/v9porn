@@ -362,4 +362,14 @@ public class SettingPresenter extends MvpBasePresenter<SettingView> implements I
     public String getPavAddress() {
         return dataManager.getPavAddress();
     }
+
+    @Override
+    public boolean isShowUrlRedirectTipDialog() {
+        return dataManager.isShowUrlRedirectTipDialog();
+    }
+
+    @Override
+    public void setShowUrlRedirectTipDialog(boolean showUrlRedirectTipDialog) {
+        dataManager.setShowUrlRedirectTipDialog(showUrlRedirectTipDialog);
+    }
 }

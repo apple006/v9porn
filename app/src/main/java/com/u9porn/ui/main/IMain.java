@@ -29,4 +29,8 @@ public interface IMain extends IBaseNotice {
     boolean haveNotSetPavAddress();
 
     boolean isUserLogin();
+
+    void setPorn9VideoAddress(String porn9VideoAddress);
+
+    void setPorn9ForumAddress(String porn9ForumAddress);
 }

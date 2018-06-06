@@ -47,7 +47,7 @@ public class AppPreferencesHelper implements PreferencesHelper {
     private final static String KEY_SP_SETTING_SCROLLVIEW_SCROLL_POSITION = "key_sp_setting_scrollview_scroll_position";
     private final static String KEY_SP_OPEN_SKIP_PAGE = "key_sp_open_skip_page";
     private final static String KEY_SP_CUSTOM_DOWNLOAD_VIDEO_DIR_PATH = "key_sp_custom_download_video_dir_path";
-
+    private final static String KEY_SP_SHOW_URL_REDIRECT_TIP_DIALOG = "key_sp_show_url_redirect_tip_dialog";
 
     private final SharedPreferences mPrefs;
 
@@ -311,5 +311,15 @@ public class AppPreferencesHelper implements PreferencesHelper {
             return path;
         }
         return path + "/";
+    }
+
+    @Override
+    public boolean isShowUrlRedirectTipDialog() {
+        return mPrefs.getBoolean(KEY_SP_SHOW_URL_REDIRECT_TIP_DIALOG, true);
+    }
+
+    @Override
+    public void setShowUrlRedirectTipDialog(boolean showUrlRedirectTipDialog) {
+        mPrefs.edit().putBoolean(KEY_SP_SHOW_URL_REDIRECT_TIP_DIALOG, showUrlRedirectTipDialog).apply();
     }
 }

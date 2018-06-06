@@ -7,6 +7,9 @@ import android.util.Log;
 import com.orhanobut.logger.Logger;
 import com.u9porn.data.network.Api;
 import com.u9porn.data.prefs.PreferencesHelper;
+import com.u9porn.eventbus.UrlRedirectEvent;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.io.IOException;
 
@@ -50,12 +53,15 @@ public class CommonHeaderInterceptor implements Interceptor {
             String url = preferencesHelper.getPorn9VideoAddress();
             HttpUrl oldHttpUrl = HttpUrl.parse(url);
             //如果不相等则可能被重定向了
-            if (oldHttpUrl != null && !oldHttpUrl.equals(httpUrl)) {
+            if (oldHttpUrl != null && !oldHttpUrl.host().equals(httpUrl.host())) {
                 HttpUrl newHttpUrl = new HttpUrl.Builder().scheme(httpUrl.scheme()).host(httpUrl.host()).build();
                 String urlStr = newHttpUrl.toString();
                 Logger.t(TAG).e("连接被重定向为:" + urlStr);
                 //更新为最新地址
                 RetrofitUrlManager.getInstance().putDomain(Api.PORN9_VIDEO_DOMAIN_NAME, urlStr);
+                if (preferencesHelper.isShowUrlRedirectTipDialog()) {
+                    EventBus.getDefault().post(new UrlRedirectEvent(url, urlStr, Api.PORN9_VIDEO_DOMAIN_NAME));
+                }
             }
         } else if (!TextUtils.isEmpty(header) && header.equals(Api.PORN9_FORUM_DOMAIN_NAME)) {
             //返回的地址
@@ -65,12 +71,15 @@ public class CommonHeaderInterceptor implements Interceptor {
             String url = preferencesHelper.getPorn9ForumAddress();
             HttpUrl oldHttpUrl = HttpUrl.parse(url);
             //如果不相等则可能被重定向了
-            if (oldHttpUrl != null && !oldHttpUrl.equals(httpUrl)) {
+            if (oldHttpUrl != null && !oldHttpUrl.host().equals(httpUrl.host())) {
                 HttpUrl newHttpUrl = new HttpUrl.Builder().scheme(httpUrl.scheme()).host(httpUrl.host()).build();
                 String urlStr = newHttpUrl.toString();
                 Logger.t(TAG).e("连接被重定向为:" + urlStr);
                 //更新为最新地址
                 RetrofitUrlManager.getInstance().putDomain(Api.PORN9_FORUM_DOMAIN_NAME, urlStr);
+                if (preferencesHelper.isShowUrlRedirectTipDialog()) {
+                    EventBus.getDefault().post(new UrlRedirectEvent(url, urlStr, Api.PORN9_FORUM_DOMAIN_NAME));
+                }
             }
         }
 

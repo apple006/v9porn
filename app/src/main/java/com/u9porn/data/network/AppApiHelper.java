@@ -308,8 +308,6 @@ public class AppApiHelper implements ApiHelper {
                                 break;
                             case FavoriteJsonResult.FAVORITE_FAIL:
                                 throw new FavoriteException("收藏失败");
-                            case FavoriteJsonResult.FAVORITE_ALREADY:
-                                throw new FavoriteException("已经收藏过了");
                             case FavoriteJsonResult.FAVORITE_YOURSELF:
                                 throw new FavoriteException("不能收藏自己的视频");
                             default:
@@ -545,7 +543,7 @@ public class AppApiHelper implements ApiHelper {
                 .map(new Function<String, List<String>>() {
                     @Override
                     public List<String> apply(String s) throws Exception {
-                        return  Parse99Mm.parse99MmImageList(s);
+                        return Parse99Mm.parse99MmImageList(s);
                     }
                 });
     }

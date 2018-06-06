@@ -514,6 +514,16 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
+    public boolean isShowUrlRedirectTipDialog() {
+        return mPreferencesHelper.isShowUrlRedirectTipDialog();
+    }
+
+    @Override
+    public void setShowUrlRedirectTipDialog(boolean showUrlRedirectTipDialog) {
+        mPreferencesHelper.setShowUrlRedirectTipDialog(showUrlRedirectTipDialog);
+    }
+
+    @Override
     public void existProxyTest() {
         mApiHelper.existProxyTest();
     }

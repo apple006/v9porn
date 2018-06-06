@@ -56,4 +56,8 @@ public interface ISetting {
     String getForum9PornAddress();
 
     String getPavAddress();
+
+    boolean isShowUrlRedirectTipDialog();
+
+    void setShowUrlRedirectTipDialog(boolean showUrlRedirectTipDialog);
 }

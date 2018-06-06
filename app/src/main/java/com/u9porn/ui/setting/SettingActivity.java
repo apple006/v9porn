@@ -218,9 +218,22 @@ public class SettingActivity extends MvpActivity<SettingView, SettingPresenter> 
             }
         });
 
+        //服务器连接重定向时是否弹窗提示
+        boolean isShowUrlRedirectTipDialog = presenter.isShowUrlRedirectTipDialog();
+        QMUICommonListItemView showUrlRedirectTipDialogItemWithSwitch = qmuiGroupListView.createItemView("连接被服务器重定向时弹窗提示");
+        showUrlRedirectTipDialogItemWithSwitch.setAccessoryType(QMUICommonListItemView.ACCESSORY_TYPE_SWITCH);
+        showUrlRedirectTipDialogItemWithSwitch.getSwitch().setChecked(isShowUrlRedirectTipDialog);
+        showUrlRedirectTipDialogItemWithSwitch.getSwitch().setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                presenter.setShowUrlRedirectTipDialog(isChecked);
+            }
+        });
+
         sec.addItemView(itemWithSwitch, null);
         sec.addItemView(itemWithSwitchForbidden, this);
         sec.addItemView(openSkipPageItemWithSwitch, null);
+        sec.addItemView(showUrlRedirectTipDialogItemWithSwitch, null);
         sec.addTo(qmuiGroupListView);
     }
 

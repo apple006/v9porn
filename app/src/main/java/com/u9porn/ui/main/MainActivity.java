@@ -31,7 +31,9 @@ import com.u9porn.R;
 import com.u9porn.constants.KeysActivityRequestResultCode;
 import com.u9porn.data.model.Notice;
 import com.u9porn.data.model.UpdateVersion;
+import com.u9porn.data.network.Api;
 import com.u9porn.eventbus.LowMemoryEvent;
+import com.u9porn.eventbus.UrlRedirectEvent;
 import com.u9porn.service.UpdateDownloadService;
 import com.u9porn.ui.MvpActivity;
 import com.u9porn.ui.basemain.BaseMainFragment;
@@ -166,10 +168,10 @@ public class MainActivity extends MvpActivity<MainView, MainPresenter> implement
 
     private void showVideoBottomSheet(final int checkIndex) {
         new QMUIBottomSheet.BottomListSheetBuilder(this, true)
-                .addItem(ResourceUtil.getDrawable(this, R.drawable.ic_search_black_24dp), "搜索V9视频")
+                .addItem(ResourceUtil.getDrawable(this, R.drawable.ic_search_black_24dp), "搜索V9PORN视频")
                 .addItem(ResourceUtil.getDrawable(this, R.drawable.ic_file_download_black_24dp), "我的下载")
-                .addItem(ResourceUtil.getDrawable(this, R.drawable.ic_video_library_black_24dp), "V9视频")
-                .addItem(ResourceUtil.getDrawable(this, R.drawable.ic_video_library_black_24dp), "Zgl视频")
+                .addItem(ResourceUtil.getDrawable(this, R.drawable.ic_video_library_black_24dp), "V9PORN视频")
+                .addItem(ResourceUtil.getDrawable(this, R.drawable.ic_video_library_black_24dp), "ZhuGuLi视频")
                 .setCheckedIndex(checkIndex)
                 .setOnSheetItemClickListener(new QMUIBottomSheet.BottomListSheetBuilder.OnSheetItemClickListener() {
                     @Override
@@ -211,8 +213,8 @@ public class MainActivity extends MvpActivity<MainView, MainPresenter> implement
 
     private void showForumBottomSheet(int selectIndex) {
         new QMUIBottomSheet.BottomListSheetBuilder(this, true)
-                .addItem(ResourceUtil.getDrawable(this, R.drawable.ic_library_books_black_24dp), "P9论坛")
-                .addItem(ResourceUtil.getDrawable(this, R.drawable.ic_library_books_black_24dp), "CL社区")
+                .addItem(ResourceUtil.getDrawable(this, R.drawable.ic_library_books_black_24dp), "V9FORUM论坛")
+                .addItem(ResourceUtil.getDrawable(this, R.drawable.ic_library_books_black_24dp), "CaoLiu社区")
                 .setCheckedIndex(selectIndex)
                 .setOnSheetItemClickListener(new QMUIBottomSheet.BottomListSheetBuilder.OnSheetItemClickListener() {
                     @Override
@@ -401,7 +403,6 @@ public class MainActivity extends MvpActivity<MainView, MainPresenter> implement
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(Keys.KEY_SELECT_INDEX, selectIndex);
-        Logger.t(TAG).d("----------onSaveInstanceState()");
     }
 
     /**
@@ -693,6 +694,39 @@ public class MainActivity extends MvpActivity<MainView, MainPresenter> implement
                 Bugsnag.notify(new Throwable(TAG + " tryToReleaseMemory error::", e), Severity.WARNING);
             }
         }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void urlRedirectEvent(final UrlRedirectEvent urlRedirectEvent) {
+        if (isBackground) {
+            return;
+        }
+        QMUIDialog.MessageDialogBuilder builder = new QMUIDialog.MessageDialogBuilder(this);
+        builder.setTitle("温馨提示");
+        builder.setMessage("服务器连接发生跳转，新地址为：\n" + urlRedirectEvent.getNewUrl() + "\n原地址：\n" + urlRedirectEvent.getOldUrl() + "\n是否保存为最新地址？");
+        builder.addAction("保存", new QMUIDialogAction.ActionListener() {
+            @Override
+            public void onClick(QMUIDialog dialog, int index) {
+                if (Api.PORN9_VIDEO_DOMAIN_NAME.equals(urlRedirectEvent.getHeader())) {
+                    presenter.setPorn9VideoAddress(urlRedirectEvent.getNewUrl());
+                    showMessage("保存成功", TastyToast.SUCCESS);
+                } else if (Api.PORN9_FORUM_DOMAIN_NAME.equals(urlRedirectEvent.getHeader())) {
+                    presenter.setPorn9ForumAddress(urlRedirectEvent.getNewUrl());
+                    showMessage("保存成功", TastyToast.SUCCESS);
+                } else {
+                    showMessage("保存失败，信息错误", TastyToast.ERROR);
+                }
+
+                dialog.dismiss();
+            }
+        });
+        builder.addAction("取消", new QMUIDialogAction.ActionListener() {
+            @Override
+            public void onClick(QMUIDialog dialog, int index) {
+                dialog.dismiss();
+            }
+        });
+        builder.show();
     }
 
     private void setNull(int position) {
