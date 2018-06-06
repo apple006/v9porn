@@ -8,6 +8,13 @@ rxjava+retrofit+rxcache+mvp+jsoup+dagger2
 
 
 ### 更新日志：
+
+------2018年6月6日 v1.0.3
+
+1. 修复收藏提示错误问题
+2. 现在在服务器发生跳转时会弹窗提示
+3. 其他细小调整或者bug
+
 ------2018年5月18日 v1.0.2
 
 1. 修复九妹图社图片无法加载问题
@@ -37,6 +44,9 @@ JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
 
 Windows 10 10.0
 
+之前有老铁说要请我喝杯咖啡，所以厚颜无耻的放个二维码
 
+![支付宝](https://github.com/techGay/v9porn/blob/master/img/alipay.jpg)
+![微信](https://github.com/techGay/v9porn/blob/master/img/wechatpay.png)
 ### 声明
 本项目仅做技术交流使用，任何人或组织无论以何种形式将其用在其他任何地方由此引发的各种问题均与本人无关
