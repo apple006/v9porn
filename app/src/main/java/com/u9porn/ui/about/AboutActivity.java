@@ -115,6 +115,12 @@ public class AboutActivity extends MvpActivity<AboutView, AboutPresenter> implem
                         showChoiceCacheCleanDialog();
                     }
                 })
+                .addItemView(mAboutGroupListView.createItemView("赞赏我，请我喝杯咖啡"), new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        showAppreciateDialog();
+                    }
+                })
                 .addItemView(mAboutGroupListView.createItemView(getResources().getString(R.string.about_check_update)), new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -129,6 +135,15 @@ public class AboutActivity extends MvpActivity<AboutView, AboutPresenter> implem
                 })
                 .addTo(mAboutGroupListView);
 
+    }
+
+    private void showAppreciateDialog(){
+        AlertDialog.Builder builder=new AlertDialog.Builder(this,R.style.MyDialogTheme);
+        builder.setTitle("赞赏作者");
+        View view=getLayoutInflater().inflate(R.layout.layout_appreciate_qrcode,null,false);
+        builder.setView(view);
+        builder.setNegativeButton("算了，囊中羞涩", null);
+        builder.show();
     }
 
     private void showChoiceCacheCleanDialog() {

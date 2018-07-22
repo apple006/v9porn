@@ -7,6 +7,8 @@ import com.u9porn.ui.basemain.BaseMainFragment;
 import com.u9porn.ui.download.DownloadActivity;
 import com.u9porn.ui.download.DownloadingFragment;
 import com.u9porn.ui.download.FinishedFragment;
+import com.u9porn.ui.images.huaban.HuaBanFragment;
+import com.u9porn.ui.images.viewimage.PhotoImageActivity;
 import com.u9porn.ui.porn9video.favorite.FavoriteActivity;
 import com.u9porn.ui.porn9video.history.HistoryActivity;
 import com.u9porn.ui.images.meizitu.MeiZiTuFragment;
@@ -93,4 +95,6 @@ public interface ActivityComponent {
     void inject(ForumFragment forumFragment);
 
     void inject(Forum9IndexFragment forum9IndexFragment);
+
+    void inject(HuaBanFragment huaBanFragment);
 }

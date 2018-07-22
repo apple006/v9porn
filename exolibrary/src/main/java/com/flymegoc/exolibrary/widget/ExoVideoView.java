@@ -1030,6 +1030,7 @@ public class ExoVideoView extends RelativeLayout {
                 if (stepVolume == 0) {
                     int max = mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
                     int current = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+                    videoViewImpl.getVolume();
                     stepVolume = ((float) current / max) * 1;
                     Log.d("AAAAA", "max : " + max + "current : " + stepVolume);
                 }

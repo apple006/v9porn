@@ -105,4 +105,7 @@ public class MyApplication extends MultiDexApplication {
         }
     }
 
+    public DataManager getDataManager() {
+        return dataManager;
+    }
 }

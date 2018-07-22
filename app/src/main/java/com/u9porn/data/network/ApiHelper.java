@@ -2,6 +2,7 @@ package com.u9porn.data.network;
 
 import com.u9porn.data.model.BaseResult;
 import com.u9porn.data.model.F9PronItem;
+import com.u9porn.data.model.HuaBan;
 import com.u9porn.data.model.MeiZiTu;
 import com.u9porn.data.model.Mm99;
 import com.u9porn.data.model.Notice;
@@ -89,4 +90,6 @@ public interface ApiHelper {
     Observable<Boolean> testPorn9ForumAddress();
 
     Observable<Boolean> testPavAddress(String url);
+
+    Observable<List<HuaBan.Picture>> findPictures(int categoryId, int page);
 }

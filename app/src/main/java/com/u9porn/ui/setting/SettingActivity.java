@@ -208,7 +208,7 @@ public class SettingActivity extends MvpActivity<SettingView, SettingPresenter> 
 
         //开启91视频跳页功能
         boolean isOpenSkipPage = presenter.isOpenSkipPage();
-        QMUICommonListItemView openSkipPageItemWithSwitch = qmuiGroupListView.createItemView("开启V9视频跳页功能");
+        QMUICommonListItemView openSkipPageItemWithSwitch = qmuiGroupListView.createItemView("开启V9PORN视频跳页功能");
         openSkipPageItemWithSwitch.setAccessoryType(QMUICommonListItemView.ACCESSORY_TYPE_SWITCH);
         openSkipPageItemWithSwitch.getSwitch().setChecked(isOpenSkipPage);
         openSkipPageItemWithSwitch.getSwitch().setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

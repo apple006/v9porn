@@ -40,11 +40,12 @@ public class AppDbHelper implements DbHelper {
         initCategory(Category.TYPE_MEI_ZI_TU, Category.CATEGORY_DEFAULT_MEI_ZI_TU_VALUE, Category.CATEGORY_DEFAULT_MEI_ZI_TU_NAME);
         initCategory(Category.TYPE_PIG_AV, Category.CATEGORY_DEFAULT_PIG_AV_VALUE, Category.CATEGORY_DEFAULT_PIG_AV_NAME);
         initCategory(Category.TYPE_99_MM, Category.CATEGORY_DEFAULT_99_MM_VALUE, Category.CATEGORY_DEFAULT_99_MM_NAME);
+        initCategory(Category.TYPE_HUA_BAN, null, Category.CATEGORY_DEFAULT_HUA_BAN_NAME);
     }
 
     @Override
     public void initCategory(int type, String[] value, String[] name) {
-        int length = value.length;
+        int length = name.length;
         List<Category> categoryList = mDaoSession.getCategoryDao().queryBuilder().where(CategoryDao.Properties.CategoryType.eq(type)).build().list();
         if (categoryList.size() == length) {
             return;
@@ -52,7 +53,12 @@ public class AppDbHelper implements DbHelper {
         for (int i = 0; i < length; i++) {
             Category category = new Category();
             category.setCategoryName(name[i]);
-            category.setCategoryValue(value[i]);
+            if (value == null) {
+                category.setCategoryValue(String.valueOf(i + 1));
+            } else {
+                category.setCategoryValue(value[i]);
+            }
+
             category.setCategoryType(type);
             category.setIsShow(true);
             category.setSortId(i);

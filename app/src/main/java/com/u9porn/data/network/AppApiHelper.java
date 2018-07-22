@@ -8,6 +8,7 @@ import com.u9porn.data.cache.CacheProviders;
 import com.u9porn.data.model.BaseResult;
 import com.u9porn.data.model.FavoriteJsonResult;
 import com.u9porn.data.model.F9PronItem;
+import com.u9porn.data.model.HuaBan;
 import com.u9porn.data.model.MeiZiTu;
 import com.u9porn.data.model.Mm99;
 import com.u9porn.data.model.Notice;
@@ -26,6 +27,7 @@ import com.u9porn.data.model.VideoCommentResult;
 import com.u9porn.data.db.entity.VideoResult;
 import com.u9porn.data.network.apiservice.Forum9PronServiceApi;
 import com.u9porn.data.network.apiservice.GitHubServiceApi;
+import com.u9porn.data.network.apiservice.HuaBanServiceApi;
 import com.u9porn.data.network.apiservice.MeiZiTuServiceApi;
 import com.u9porn.data.network.apiservice.Mm99ServiceApi;
 import com.u9porn.data.network.apiservice.PavServiceApi;
@@ -86,13 +88,14 @@ public class AppApiHelper implements ApiHelper {
     private Mm99ServiceApi mm99ServiceApi;
     private PavServiceApi pavServiceApi;
     private ProxyServiceApi proxyServiceApi;
+    private HuaBanServiceApi huaBanServiceApi;
     private AddressHelper addressHelper;
     private MyProxySelector myProxySelector;
     private Gson gson;
     private User user;
 
     @Inject
-    public AppApiHelper(CacheProviders cacheProviders, V9PornServiceApi v9PornServiceApi, Forum9PronServiceApi forum9PronServiceApi, GitHubServiceApi gitHubServiceApi, MeiZiTuServiceApi meiZiTuServiceApi, Mm99ServiceApi mm99ServiceApi, PavServiceApi pavServiceApi, ProxyServiceApi proxyServiceApi, AddressHelper addressHelper, Gson gson, MyProxySelector myProxySelector, User user) {
+    public AppApiHelper(CacheProviders cacheProviders, V9PornServiceApi v9PornServiceApi, Forum9PronServiceApi forum9PronServiceApi, GitHubServiceApi gitHubServiceApi, MeiZiTuServiceApi meiZiTuServiceApi, Mm99ServiceApi mm99ServiceApi, PavServiceApi pavServiceApi, ProxyServiceApi proxyServiceApi, HuaBanServiceApi huaBanServiceApi, AddressHelper addressHelper, Gson gson, MyProxySelector myProxySelector, User user) {
         this.cacheProviders = cacheProviders;
         this.v9PornServiceApi = v9PornServiceApi;
         this.forum9PronServiceApi = forum9PronServiceApi;
@@ -101,6 +104,7 @@ public class AppApiHelper implements ApiHelper {
         this.mm99ServiceApi = mm99ServiceApi;
         this.pavServiceApi = pavServiceApi;
         this.proxyServiceApi = proxyServiceApi;
+        this.huaBanServiceApi = huaBanServiceApi;
         this.addressHelper = addressHelper;
         this.gson = gson;
         this.myProxySelector = myProxySelector;
@@ -665,6 +669,17 @@ public class AppApiHelper implements ApiHelper {
                         return baseResult.getData().size() != 0;
                     }
                 });
+    }
+
+    @Override
+    public Observable<List<HuaBan.Picture>> findPictures(int categoryId, int page) {
+        return huaBanServiceApi.findPictures(categoryId, page, 10).map(new Function<String, List<HuaBan.Picture>>() {
+            @Override
+            public List<HuaBan.Picture> apply(String s) throws Exception {
+                HuaBan huaBan = gson.fromJson(s, HuaBan.class);
+                return huaBan.getData();
+            }
+        });
     }
 
     private Observable<List<PavModel>> actionMore(Observable<Reply<String>> observable, final boolean pullToRefresh) {

@@ -39,6 +39,7 @@ import com.u9porn.ui.MvpActivity;
 import com.u9porn.ui.basemain.BaseMainFragment;
 import com.u9porn.ui.download.DownloadActivity;
 import com.u9porn.ui.images.Main99MmFragment;
+import com.u9porn.ui.images.MainHuaBanFragment;
 import com.u9porn.ui.images.MainMeiZiTuFragment;
 import com.u9porn.ui.mine.MineFragment;
 import com.u9porn.ui.music.MusicFragment;
@@ -81,6 +82,7 @@ public class MainActivity extends MvpActivity<MainView, MainPresenter> implement
     final int PAV = 3;
     final int MEI_ZI_TU = 0;
     final int MM_99 = 1;
+    final int HUA_BAN=2;
     private static final String TAG = MainActivity.class.getSimpleName();
 
     @BindView(R.id.bottom_navigation_bar)
@@ -98,6 +100,7 @@ public class MainActivity extends MvpActivity<MainView, MainPresenter> implement
     private MainMeiZiTuFragment mMaiMeiZiTuFragment;
     private Main9ForumFragment mMain9ForumFragment;
     private Main99MmFragment mMain99MmFragment;
+    private MainHuaBanFragment mMainHuaBanFragment;
     private MainPavFragment mMainPavFragment;
     private MusicFragment mMusicFragment;
     private MineFragment mMineFragment;
@@ -140,11 +143,6 @@ public class MainActivity extends MvpActivity<MainView, MainPresenter> implement
 
     }
 
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        Logger.t(TAG).d("onNewIntent");
-    }
 
     private void doOnFloatingActionButtonClick(@IntRange(from = 0, to = 4) int position) {
         switch (position) {
@@ -362,6 +360,7 @@ public class MainActivity extends MvpActivity<MainView, MainPresenter> implement
                 secondTabShow = MEI_ZI_TU;
                 presenter.setMainSecondTabShow(MEI_ZI_TU);
                 mMain99MmFragment = null;
+                mMainHuaBanFragment=null;
                 break;
             case MM_99:
                 if (mMain99MmFragment == null) {
@@ -371,9 +370,17 @@ public class MainActivity extends MvpActivity<MainView, MainPresenter> implement
                 secondTabShow = MM_99;
                 presenter.setMainSecondTabShow(MM_99);
                 mMaiMeiZiTuFragment = null;
+                mMainHuaBanFragment=null;
                 break;
-            case 2:
-                showMessage("还未支持，敬请期待", TastyToast.INFO);
+            case HUA_BAN:
+                if (mMainHuaBanFragment==null){
+                    mMainHuaBanFragment=MainHuaBanFragment.getInstance();
+                }
+                mCurrentFragment = FragmentUtils.switchContent(fragmentManager, mCurrentFragment, mMainHuaBanFragment, contentFrameLayout.getId(), itemId, isInnerReplace);
+                secondTabShow = HUA_BAN;
+                presenter.setMainSecondTabShow(HUA_BAN);
+                mMain99MmFragment = null;
+                mMaiMeiZiTuFragment = null;
                 break;
             default:
         }
