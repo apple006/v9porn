@@ -115,6 +115,10 @@
             android:configChanges="orientation|screenSize|keyboardHidden|uiMode|keyboard|layoutDirection"
             android:label="@string/pav"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.images.viewimage.PhotoImageActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|uiMode|keyboard|layoutDirection"
+            android:screenOrientation="portrait" />
 
         <service android:name=".service.UpdateDownloadService" />
         <service android:name=".service.DownloadVideoService" />
@@ -134,9 +138,7 @@
             android:value="2.1" />
         <meta-data
             android:name="com.bugsnag.android.API_KEY"
-            android:value="" />
-
-        <activity android:name=".ui.images.viewimage.PhotoImageActivity"></activity>
+            android:value="1858e39753721dd04f8c28150e02ac81" />
     </application>
 
 </manifest>
