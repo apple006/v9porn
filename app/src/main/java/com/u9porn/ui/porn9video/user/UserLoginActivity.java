@@ -230,6 +230,10 @@ public class UserLoginActivity extends MvpActivity<UserView, UserPresenter> impl
                 setResult(KeysActivityRequestResultCode.RESULT_CODE_FOR_REFRESH_GET_UID);
                 onBackPressed();
                 break;
+            case KeysActivityRequestResultCode.LOGIN_ACTION_FOR_LOOK_AUTHOR_VIDEO:
+                setResult(KeysActivityRequestResultCode.RESULT_FOR_LOOK_AUTHOR_VIDEO);
+                onBackPressed();
+                break;
             default:
                 setResult(RESULT_OK);
                 onBackPressed();

@@ -11,84 +11,188 @@ import com.google.gson.annotations.SerializedName;
 public class PavFormRequest {
 
     /**
-     * limit : 10
+     * custom_title :
+     * category_id : 672
      * sort : random_posts
+     * limit : 10
+     * ajax_pagination : load_more
+     * separator :
+     * custom_url :
+     * block_template_id :
+     * border_top :
+     * color_preset :
+     * mx4_tl :
      * post_ids :
+     * category_ids :
      * tag_slug :
      * autors_id :
      * installed_post_types :
-     * category_id :
-     * category_ids :
-     * custom_title :
-     * custom_url :
-     * show_child_cat :
-     * sub_cat_ajax :
-     * ajax_pagination : load_more
-     * header_color :
-     * header_text_color :
-     * ajax_pagination_infinite_stop :
-     * td_column_number : 3
-     * td_ajax_preloading :
+     * offset :
+     * el_class :
      * td_ajax_filter_type :
      * td_ajax_filter_ids :
-     * td_filter_default_txt : 所有
-     * color_preset :
-     * border_top :
-     * class : td_uid_11_5a718e05227dc_rand
-     * el_class :
-     * offset :
+     * td_filter_default_txt : All
+     * td_ajax_preloading :
+     * f_header_font_header :
+     * f_header_font_title : Block header
+     * f_header_font_settings :
+     * f_header_font_family :
+     * f_header_font_size :
+     * f_header_font_line_height :
+     * f_header_font_style :
+     * f_header_font_weight :
+     * f_header_font_transform :
+     * f_header_font_spacing :
+     * f_header_ :
+     * f_ajax_font_title : Ajax categories
+     * f_ajax_font_settings :
+     * f_ajax_font_family :
+     * f_ajax_font_size :
+     * f_ajax_font_line_height :
+     * f_ajax_font_style :
+     * f_ajax_font_weight :
+     * f_ajax_font_transform :
+     * f_ajax_font_spacing :
+     * f_ajax_ :
+     * f_more_font_title : Load more button
+     * f_more_font_settings :
+     * f_more_font_family :
+     * f_more_font_size :
+     * f_more_font_line_height :
+     * f_more_font_style :
+     * f_more_font_weight :
+     * f_more_font_transform :
+     * f_more_font_spacing :
+     * f_more_ :
+     * mx4f_title_font_header :
+     * mx4f_title_font_title : Article title
+     * mx4f_title_font_settings :
+     * mx4f_title_font_family :
+     * mx4f_title_font_size :
+     * mx4f_title_font_line_height :
+     * mx4f_title_font_style :
+     * mx4f_title_font_weight :
+     * mx4f_title_font_transform :
+     * mx4f_title_font_spacing :
+     * mx4f_title_ :
+     * mx4f_cat_font_title : Article category tag
+     * mx4f_cat_font_settings :
+     * mx4f_cat_font_family :
+     * mx4f_cat_font_size :
+     * mx4f_cat_font_line_height :
+     * mx4f_cat_font_style :
+     * mx4f_cat_font_weight :
+     * mx4f_cat_font_transform :
+     * mx4f_cat_font_spacing :
+     * mx4f_cat_ :
+     * ajax_pagination_infinite_stop :
      * css :
      * tdc_css :
-     * tdc_css_class : td_uid_11_5a718e05227dc_rand
-     * tdc_css_class_style : td_uid_11_5a718e05227dc_rand_style
-     * live_filter :
-     * live_filter_cur_post_id :
-     * live_filter_cur_post_author :
-     * block_template_id :
+     * td_column_number : 3
+     * header_color :
+     * class : td_uid_11_5b793d4fdd2fa_rand
+     * tdc_css_class : td_uid_11_5b793d4fdd2fa_rand
+     * tdc_css_class_style : td_uid_11_5b793d4fdd2fa_rand_style
      */
 
-    private String limit;
+    private String custom_title;
+    private String category_id;
     private String sort;
+    private String limit;
+    private String ajax_pagination;
+    private String separator;
+    private String custom_url;
+    private String block_template_id;
+    private String border_top;
+    private String color_preset;
+    private String mx4_tl;
     private String post_ids;
+    private String category_ids;
     private String tag_slug;
     private String autors_id;
     private String installed_post_types;
-    private String category_id;
-    private String category_ids;
-    private String custom_title;
-    private String custom_url;
-    private String show_child_cat;
-    private String sub_cat_ajax;
-    private String ajax_pagination;
-    private String header_color;
-    private String header_text_color;
-    private String ajax_pagination_infinite_stop;
-    private int td_column_number;
-    private String td_ajax_preloading;
+    private String offset;
+    private String el_class;
     private String td_ajax_filter_type;
     private String td_ajax_filter_ids;
     private String td_filter_default_txt;
-    private String color_preset;
-    private String border_top;
-    @SerializedName("class")
-    private String classX;
-    private String el_class;
-    private String offset;
+    private String td_ajax_preloading;
+    private String f_header_font_header;
+    private String f_header_font_title;
+    private String f_header_font_settings;
+    private String f_header_font_family;
+    private String f_header_font_size;
+    private String f_header_font_line_height;
+    private String f_header_font_style;
+    private String f_header_font_weight;
+    private String f_header_font_transform;
+    private String f_header_font_spacing;
+    private String f_header_;
+    private String f_ajax_font_title;
+    private String f_ajax_font_settings;
+    private String f_ajax_font_family;
+    private String f_ajax_font_size;
+    private String f_ajax_font_line_height;
+    private String f_ajax_font_style;
+    private String f_ajax_font_weight;
+    private String f_ajax_font_transform;
+    private String f_ajax_font_spacing;
+    private String f_ajax_;
+    private String f_more_font_title;
+    private String f_more_font_settings;
+    private String f_more_font_family;
+    private String f_more_font_size;
+    private String f_more_font_line_height;
+    private String f_more_font_style;
+    private String f_more_font_weight;
+    private String f_more_font_transform;
+    private String f_more_font_spacing;
+    private String f_more_;
+    private String mx4f_title_font_header;
+    private String mx4f_title_font_title;
+    private String mx4f_title_font_settings;
+    private String mx4f_title_font_family;
+    private String mx4f_title_font_size;
+    private String mx4f_title_font_line_height;
+    private String mx4f_title_font_style;
+    private String mx4f_title_font_weight;
+    private String mx4f_title_font_transform;
+    private String mx4f_title_font_spacing;
+    private String mx4f_title_;
+    private String mx4f_cat_font_title;
+    private String mx4f_cat_font_settings;
+    private String mx4f_cat_font_family;
+    private String mx4f_cat_font_size;
+    private String mx4f_cat_font_line_height;
+    private String mx4f_cat_font_style;
+    private String mx4f_cat_font_weight;
+    private String mx4f_cat_font_transform;
+    private String mx4f_cat_font_spacing;
+    private String mx4f_cat_;
+    private String ajax_pagination_infinite_stop;
     private String css;
     private String tdc_css;
+    private int td_column_number;
+    private String header_color;
+    @SerializedName("class")
+    private String classX;
     private String tdc_css_class;
     private String tdc_css_class_style;
-    private String live_filter;
-    private String live_filter_cur_post_id;
-    private String live_filter_cur_post_author;
-    private String block_template_id;
 
-    public String getLimit() {
-        return limit;
+    public String getCustom_title() {
+        return custom_title;
     }
 
-    public void setLimit(String limit) {
-        this.limit = limit;
+    public void setCustom_title(String custom_title) {
+        this.custom_title = custom_title;
+    }
+
+    public String getCategory_id() {
+        return category_id;
+    }
+
+    public void setCategory_id(String category_id) {
+        this.category_id = category_id;
     }
 
     public String getSort() {
@@ -99,12 +203,84 @@ public class PavFormRequest {
         this.sort = sort;
     }
 
+    public String getLimit() {
+        return limit;
+    }
+
+    public void setLimit(String limit) {
+        this.limit = limit;
+    }
+
+    public String getAjax_pagination() {
+        return ajax_pagination;
+    }
+
+    public void setAjax_pagination(String ajax_pagination) {
+        this.ajax_pagination = ajax_pagination;
+    }
+
+    public String getSeparator() {
+        return separator;
+    }
+
+    public void setSeparator(String separator) {
+        this.separator = separator;
+    }
+
+    public String getCustom_url() {
+        return custom_url;
+    }
+
+    public void setCustom_url(String custom_url) {
+        this.custom_url = custom_url;
+    }
+
+    public String getBlock_template_id() {
+        return block_template_id;
+    }
+
+    public void setBlock_template_id(String block_template_id) {
+        this.block_template_id = block_template_id;
+    }
+
+    public String getBorder_top() {
+        return border_top;
+    }
+
+    public void setBorder_top(String border_top) {
+        this.border_top = border_top;
+    }
+
+    public String getColor_preset() {
+        return color_preset;
+    }
+
+    public void setColor_preset(String color_preset) {
+        this.color_preset = color_preset;
+    }
+
+    public String getMx4_tl() {
+        return mx4_tl;
+    }
+
+    public void setMx4_tl(String mx4_tl) {
+        this.mx4_tl = mx4_tl;
+    }
+
     public String getPost_ids() {
         return post_ids;
     }
 
     public void setPost_ids(String post_ids) {
         this.post_ids = post_ids;
+    }
+
+    public String getCategory_ids() {
+        return category_ids;
+    }
+
+    public void setCategory_ids(String category_ids) {
+        this.category_ids = category_ids;
     }
 
     public String getTag_slug() {
@@ -131,100 +307,20 @@ public class PavFormRequest {
         this.installed_post_types = installed_post_types;
     }
 
-    public String getCategory_id() {
-        return category_id;
+    public String getOffset() {
+        return offset;
     }
 
-    public void setCategory_id(String category_id) {
-        this.category_id = category_id;
+    public void setOffset(String offset) {
+        this.offset = offset;
     }
 
-    public String getCategory_ids() {
-        return category_ids;
+    public String getEl_class() {
+        return el_class;
     }
 
-    public void setCategory_ids(String category_ids) {
-        this.category_ids = category_ids;
-    }
-
-    public String getCustom_title() {
-        return custom_title;
-    }
-
-    public void setCustom_title(String custom_title) {
-        this.custom_title = custom_title;
-    }
-
-    public String getCustom_url() {
-        return custom_url;
-    }
-
-    public void setCustom_url(String custom_url) {
-        this.custom_url = custom_url;
-    }
-
-    public String getShow_child_cat() {
-        return show_child_cat;
-    }
-
-    public void setShow_child_cat(String show_child_cat) {
-        this.show_child_cat = show_child_cat;
-    }
-
-    public String getSub_cat_ajax() {
-        return sub_cat_ajax;
-    }
-
-    public void setSub_cat_ajax(String sub_cat_ajax) {
-        this.sub_cat_ajax = sub_cat_ajax;
-    }
-
-    public String getAjax_pagination() {
-        return ajax_pagination;
-    }
-
-    public void setAjax_pagination(String ajax_pagination) {
-        this.ajax_pagination = ajax_pagination;
-    }
-
-    public String getHeader_color() {
-        return header_color;
-    }
-
-    public void setHeader_color(String header_color) {
-        this.header_color = header_color;
-    }
-
-    public String getHeader_text_color() {
-        return header_text_color;
-    }
-
-    public void setHeader_text_color(String header_text_color) {
-        this.header_text_color = header_text_color;
-    }
-
-    public String getAjax_pagination_infinite_stop() {
-        return ajax_pagination_infinite_stop;
-    }
-
-    public void setAjax_pagination_infinite_stop(String ajax_pagination_infinite_stop) {
-        this.ajax_pagination_infinite_stop = ajax_pagination_infinite_stop;
-    }
-
-    public int getTd_column_number() {
-        return td_column_number;
-    }
-
-    public void setTd_column_number(int td_column_number) {
-        this.td_column_number = td_column_number;
-    }
-
-    public String getTd_ajax_preloading() {
-        return td_ajax_preloading;
-    }
-
-    public void setTd_ajax_preloading(String td_ajax_preloading) {
-        this.td_ajax_preloading = td_ajax_preloading;
+    public void setEl_class(String el_class) {
+        this.el_class = el_class;
     }
 
     public String getTd_ajax_filter_type() {
@@ -251,44 +347,436 @@ public class PavFormRequest {
         this.td_filter_default_txt = td_filter_default_txt;
     }
 
-    public String getColor_preset() {
-        return color_preset;
+    public String getTd_ajax_preloading() {
+        return td_ajax_preloading;
     }
 
-    public void setColor_preset(String color_preset) {
-        this.color_preset = color_preset;
+    public void setTd_ajax_preloading(String td_ajax_preloading) {
+        this.td_ajax_preloading = td_ajax_preloading;
     }
 
-    public String getBorder_top() {
-        return border_top;
+    public String getF_header_font_header() {
+        return f_header_font_header;
     }
 
-    public void setBorder_top(String border_top) {
-        this.border_top = border_top;
+    public void setF_header_font_header(String f_header_font_header) {
+        this.f_header_font_header = f_header_font_header;
     }
 
-    public String getClassX() {
-        return classX;
+    public String getF_header_font_title() {
+        return f_header_font_title;
     }
 
-    public void setClassX(String classX) {
-        this.classX = classX;
+    public void setF_header_font_title(String f_header_font_title) {
+        this.f_header_font_title = f_header_font_title;
     }
 
-    public String getEl_class() {
-        return el_class;
+    public String getF_header_font_settings() {
+        return f_header_font_settings;
     }
 
-    public void setEl_class(String el_class) {
-        this.el_class = el_class;
+    public void setF_header_font_settings(String f_header_font_settings) {
+        this.f_header_font_settings = f_header_font_settings;
     }
 
-    public String getOffset() {
-        return offset;
+    public String getF_header_font_family() {
+        return f_header_font_family;
     }
 
-    public void setOffset(String offset) {
-        this.offset = offset;
+    public void setF_header_font_family(String f_header_font_family) {
+        this.f_header_font_family = f_header_font_family;
+    }
+
+    public String getF_header_font_size() {
+        return f_header_font_size;
+    }
+
+    public void setF_header_font_size(String f_header_font_size) {
+        this.f_header_font_size = f_header_font_size;
+    }
+
+    public String getF_header_font_line_height() {
+        return f_header_font_line_height;
+    }
+
+    public void setF_header_font_line_height(String f_header_font_line_height) {
+        this.f_header_font_line_height = f_header_font_line_height;
+    }
+
+    public String getF_header_font_style() {
+        return f_header_font_style;
+    }
+
+    public void setF_header_font_style(String f_header_font_style) {
+        this.f_header_font_style = f_header_font_style;
+    }
+
+    public String getF_header_font_weight() {
+        return f_header_font_weight;
+    }
+
+    public void setF_header_font_weight(String f_header_font_weight) {
+        this.f_header_font_weight = f_header_font_weight;
+    }
+
+    public String getF_header_font_transform() {
+        return f_header_font_transform;
+    }
+
+    public void setF_header_font_transform(String f_header_font_transform) {
+        this.f_header_font_transform = f_header_font_transform;
+    }
+
+    public String getF_header_font_spacing() {
+        return f_header_font_spacing;
+    }
+
+    public void setF_header_font_spacing(String f_header_font_spacing) {
+        this.f_header_font_spacing = f_header_font_spacing;
+    }
+
+    public String getF_header_() {
+        return f_header_;
+    }
+
+    public void setF_header_(String f_header_) {
+        this.f_header_ = f_header_;
+    }
+
+    public String getF_ajax_font_title() {
+        return f_ajax_font_title;
+    }
+
+    public void setF_ajax_font_title(String f_ajax_font_title) {
+        this.f_ajax_font_title = f_ajax_font_title;
+    }
+
+    public String getF_ajax_font_settings() {
+        return f_ajax_font_settings;
+    }
+
+    public void setF_ajax_font_settings(String f_ajax_font_settings) {
+        this.f_ajax_font_settings = f_ajax_font_settings;
+    }
+
+    public String getF_ajax_font_family() {
+        return f_ajax_font_family;
+    }
+
+    public void setF_ajax_font_family(String f_ajax_font_family) {
+        this.f_ajax_font_family = f_ajax_font_family;
+    }
+
+    public String getF_ajax_font_size() {
+        return f_ajax_font_size;
+    }
+
+    public void setF_ajax_font_size(String f_ajax_font_size) {
+        this.f_ajax_font_size = f_ajax_font_size;
+    }
+
+    public String getF_ajax_font_line_height() {
+        return f_ajax_font_line_height;
+    }
+
+    public void setF_ajax_font_line_height(String f_ajax_font_line_height) {
+        this.f_ajax_font_line_height = f_ajax_font_line_height;
+    }
+
+    public String getF_ajax_font_style() {
+        return f_ajax_font_style;
+    }
+
+    public void setF_ajax_font_style(String f_ajax_font_style) {
+        this.f_ajax_font_style = f_ajax_font_style;
+    }
+
+    public String getF_ajax_font_weight() {
+        return f_ajax_font_weight;
+    }
+
+    public void setF_ajax_font_weight(String f_ajax_font_weight) {
+        this.f_ajax_font_weight = f_ajax_font_weight;
+    }
+
+    public String getF_ajax_font_transform() {
+        return f_ajax_font_transform;
+    }
+
+    public void setF_ajax_font_transform(String f_ajax_font_transform) {
+        this.f_ajax_font_transform = f_ajax_font_transform;
+    }
+
+    public String getF_ajax_font_spacing() {
+        return f_ajax_font_spacing;
+    }
+
+    public void setF_ajax_font_spacing(String f_ajax_font_spacing) {
+        this.f_ajax_font_spacing = f_ajax_font_spacing;
+    }
+
+    public String getF_ajax_() {
+        return f_ajax_;
+    }
+
+    public void setF_ajax_(String f_ajax_) {
+        this.f_ajax_ = f_ajax_;
+    }
+
+    public String getF_more_font_title() {
+        return f_more_font_title;
+    }
+
+    public void setF_more_font_title(String f_more_font_title) {
+        this.f_more_font_title = f_more_font_title;
+    }
+
+    public String getF_more_font_settings() {
+        return f_more_font_settings;
+    }
+
+    public void setF_more_font_settings(String f_more_font_settings) {
+        this.f_more_font_settings = f_more_font_settings;
+    }
+
+    public String getF_more_font_family() {
+        return f_more_font_family;
+    }
+
+    public void setF_more_font_family(String f_more_font_family) {
+        this.f_more_font_family = f_more_font_family;
+    }
+
+    public String getF_more_font_size() {
+        return f_more_font_size;
+    }
+
+    public void setF_more_font_size(String f_more_font_size) {
+        this.f_more_font_size = f_more_font_size;
+    }
+
+    public String getF_more_font_line_height() {
+        return f_more_font_line_height;
+    }
+
+    public void setF_more_font_line_height(String f_more_font_line_height) {
+        this.f_more_font_line_height = f_more_font_line_height;
+    }
+
+    public String getF_more_font_style() {
+        return f_more_font_style;
+    }
+
+    public void setF_more_font_style(String f_more_font_style) {
+        this.f_more_font_style = f_more_font_style;
+    }
+
+    public String getF_more_font_weight() {
+        return f_more_font_weight;
+    }
+
+    public void setF_more_font_weight(String f_more_font_weight) {
+        this.f_more_font_weight = f_more_font_weight;
+    }
+
+    public String getF_more_font_transform() {
+        return f_more_font_transform;
+    }
+
+    public void setF_more_font_transform(String f_more_font_transform) {
+        this.f_more_font_transform = f_more_font_transform;
+    }
+
+    public String getF_more_font_spacing() {
+        return f_more_font_spacing;
+    }
+
+    public void setF_more_font_spacing(String f_more_font_spacing) {
+        this.f_more_font_spacing = f_more_font_spacing;
+    }
+
+    public String getF_more_() {
+        return f_more_;
+    }
+
+    public void setF_more_(String f_more_) {
+        this.f_more_ = f_more_;
+    }
+
+    public String getMx4f_title_font_header() {
+        return mx4f_title_font_header;
+    }
+
+    public void setMx4f_title_font_header(String mx4f_title_font_header) {
+        this.mx4f_title_font_header = mx4f_title_font_header;
+    }
+
+    public String getMx4f_title_font_title() {
+        return mx4f_title_font_title;
+    }
+
+    public void setMx4f_title_font_title(String mx4f_title_font_title) {
+        this.mx4f_title_font_title = mx4f_title_font_title;
+    }
+
+    public String getMx4f_title_font_settings() {
+        return mx4f_title_font_settings;
+    }
+
+    public void setMx4f_title_font_settings(String mx4f_title_font_settings) {
+        this.mx4f_title_font_settings = mx4f_title_font_settings;
+    }
+
+    public String getMx4f_title_font_family() {
+        return mx4f_title_font_family;
+    }
+
+    public void setMx4f_title_font_family(String mx4f_title_font_family) {
+        this.mx4f_title_font_family = mx4f_title_font_family;
+    }
+
+    public String getMx4f_title_font_size() {
+        return mx4f_title_font_size;
+    }
+
+    public void setMx4f_title_font_size(String mx4f_title_font_size) {
+        this.mx4f_title_font_size = mx4f_title_font_size;
+    }
+
+    public String getMx4f_title_font_line_height() {
+        return mx4f_title_font_line_height;
+    }
+
+    public void setMx4f_title_font_line_height(String mx4f_title_font_line_height) {
+        this.mx4f_title_font_line_height = mx4f_title_font_line_height;
+    }
+
+    public String getMx4f_title_font_style() {
+        return mx4f_title_font_style;
+    }
+
+    public void setMx4f_title_font_style(String mx4f_title_font_style) {
+        this.mx4f_title_font_style = mx4f_title_font_style;
+    }
+
+    public String getMx4f_title_font_weight() {
+        return mx4f_title_font_weight;
+    }
+
+    public void setMx4f_title_font_weight(String mx4f_title_font_weight) {
+        this.mx4f_title_font_weight = mx4f_title_font_weight;
+    }
+
+    public String getMx4f_title_font_transform() {
+        return mx4f_title_font_transform;
+    }
+
+    public void setMx4f_title_font_transform(String mx4f_title_font_transform) {
+        this.mx4f_title_font_transform = mx4f_title_font_transform;
+    }
+
+    public String getMx4f_title_font_spacing() {
+        return mx4f_title_font_spacing;
+    }
+
+    public void setMx4f_title_font_spacing(String mx4f_title_font_spacing) {
+        this.mx4f_title_font_spacing = mx4f_title_font_spacing;
+    }
+
+    public String getMx4f_title_() {
+        return mx4f_title_;
+    }
+
+    public void setMx4f_title_(String mx4f_title_) {
+        this.mx4f_title_ = mx4f_title_;
+    }
+
+    public String getMx4f_cat_font_title() {
+        return mx4f_cat_font_title;
+    }
+
+    public void setMx4f_cat_font_title(String mx4f_cat_font_title) {
+        this.mx4f_cat_font_title = mx4f_cat_font_title;
+    }
+
+    public String getMx4f_cat_font_settings() {
+        return mx4f_cat_font_settings;
+    }
+
+    public void setMx4f_cat_font_settings(String mx4f_cat_font_settings) {
+        this.mx4f_cat_font_settings = mx4f_cat_font_settings;
+    }
+
+    public String getMx4f_cat_font_family() {
+        return mx4f_cat_font_family;
+    }
+
+    public void setMx4f_cat_font_family(String mx4f_cat_font_family) {
+        this.mx4f_cat_font_family = mx4f_cat_font_family;
+    }
+
+    public String getMx4f_cat_font_size() {
+        return mx4f_cat_font_size;
+    }
+
+    public void setMx4f_cat_font_size(String mx4f_cat_font_size) {
+        this.mx4f_cat_font_size = mx4f_cat_font_size;
+    }
+
+    public String getMx4f_cat_font_line_height() {
+        return mx4f_cat_font_line_height;
+    }
+
+    public void setMx4f_cat_font_line_height(String mx4f_cat_font_line_height) {
+        this.mx4f_cat_font_line_height = mx4f_cat_font_line_height;
+    }
+
+    public String getMx4f_cat_font_style() {
+        return mx4f_cat_font_style;
+    }
+
+    public void setMx4f_cat_font_style(String mx4f_cat_font_style) {
+        this.mx4f_cat_font_style = mx4f_cat_font_style;
+    }
+
+    public String getMx4f_cat_font_weight() {
+        return mx4f_cat_font_weight;
+    }
+
+    public void setMx4f_cat_font_weight(String mx4f_cat_font_weight) {
+        this.mx4f_cat_font_weight = mx4f_cat_font_weight;
+    }
+
+    public String getMx4f_cat_font_transform() {
+        return mx4f_cat_font_transform;
+    }
+
+    public void setMx4f_cat_font_transform(String mx4f_cat_font_transform) {
+        this.mx4f_cat_font_transform = mx4f_cat_font_transform;
+    }
+
+    public String getMx4f_cat_font_spacing() {
+        return mx4f_cat_font_spacing;
+    }
+
+    public void setMx4f_cat_font_spacing(String mx4f_cat_font_spacing) {
+        this.mx4f_cat_font_spacing = mx4f_cat_font_spacing;
+    }
+
+    public String getMx4f_cat_() {
+        return mx4f_cat_;
+    }
+
+    public void setMx4f_cat_(String mx4f_cat_) {
+        this.mx4f_cat_ = mx4f_cat_;
+    }
+
+    public String getAjax_pagination_infinite_stop() {
+        return ajax_pagination_infinite_stop;
+    }
+
+    public void setAjax_pagination_infinite_stop(String ajax_pagination_infinite_stop) {
+        this.ajax_pagination_infinite_stop = ajax_pagination_infinite_stop;
     }
 
     public String getCss() {
@@ -307,6 +795,30 @@ public class PavFormRequest {
         this.tdc_css = tdc_css;
     }
 
+    public int getTd_column_number() {
+        return td_column_number;
+    }
+
+    public void setTd_column_number(int td_column_number) {
+        this.td_column_number = td_column_number;
+    }
+
+    public String getHeader_color() {
+        return header_color;
+    }
+
+    public void setHeader_color(String header_color) {
+        this.header_color = header_color;
+    }
+
+    public String getClassX() {
+        return classX;
+    }
+
+    public void setClassX(String classX) {
+        this.classX = classX;
+    }
+
     public String getTdc_css_class() {
         return tdc_css_class;
     }
@@ -321,37 +833,5 @@ public class PavFormRequest {
 
     public void setTdc_css_class_style(String tdc_css_class_style) {
         this.tdc_css_class_style = tdc_css_class_style;
-    }
-
-    public String getLive_filter() {
-        return live_filter;
-    }
-
-    public void setLive_filter(String live_filter) {
-        this.live_filter = live_filter;
-    }
-
-    public String getLive_filter_cur_post_id() {
-        return live_filter_cur_post_id;
-    }
-
-    public void setLive_filter_cur_post_id(String live_filter_cur_post_id) {
-        this.live_filter_cur_post_id = live_filter_cur_post_id;
-    }
-
-    public String getLive_filter_cur_post_author() {
-        return live_filter_cur_post_author;
-    }
-
-    public void setLive_filter_cur_post_author(String live_filter_cur_post_author) {
-        this.live_filter_cur_post_author = live_filter_cur_post_author;
-    }
-
-    public String getBlock_template_id() {
-        return block_template_id;
-    }
-
-    public void setBlock_template_id(String block_template_id) {
-        this.block_template_id = block_template_id;
     }
 }

@@ -154,6 +154,11 @@ public class MainPresenter extends MvpBasePresenter<MainView> implements IMain {
     }
 
     @Override
+    public boolean haveNotSetAxgleAddress() {
+        return false;
+    }
+
+    @Override
     public boolean isUserLogin() {
         return dataManager.isUserLogin();
     }

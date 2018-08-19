@@ -81,7 +81,7 @@ public class AuthorActivity extends MvpActivity<AuthorView, AuthorPresenter> imp
                 V9PornItem v9PornItems = (V9PornItem) adapter.getData().get(position);
                 Intent intent = new Intent();
                 intent.putExtra(Keys.KEY_INTENT_V9PORN_ITEM, v9PornItems);
-                setResult(KeysActivityRequestResultCode.AUTHOR_ACTIVITY_RESULT_CODE, intent);
+                //setResult(KeysActivityRequestResultCode.AUTHOR_ACTIVITY_RESULT_CODE, intent);
                 onBackPressed();
             }
         });

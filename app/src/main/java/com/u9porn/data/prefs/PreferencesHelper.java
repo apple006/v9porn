@@ -105,4 +105,8 @@ public interface PreferencesHelper {
     boolean isShowUrlRedirectTipDialog();
 
     void setShowUrlRedirectTipDialog(boolean showUrlRedirectTipDialog);
+
+    void setAxgleAddress(String address);
+
+    String getAxgleAddress();
 }

@@ -3,12 +3,16 @@ package com.u9porn.di.component;
 import com.u9porn.di.PerActivity;
 import com.u9porn.di.module.ActivityModule;
 import com.u9porn.ui.about.AboutActivity;
+import com.u9porn.ui.axgle.AxgleFragment;
+import com.u9porn.ui.axgle.play.AxglePlayActivity;
 import com.u9porn.ui.basemain.BaseMainFragment;
 import com.u9porn.ui.download.DownloadActivity;
 import com.u9porn.ui.download.DownloadingFragment;
 import com.u9porn.ui.download.FinishedFragment;
 import com.u9porn.ui.images.huaban.HuaBanFragment;
 import com.u9porn.ui.images.viewimage.PhotoImageActivity;
+import com.u9porn.ui.porn9video.author.AuthorFragment;
+import com.u9porn.ui.porn9video.comment.CommentFragment;
 import com.u9porn.ui.porn9video.favorite.FavoriteActivity;
 import com.u9porn.ui.porn9video.history.HistoryActivity;
 import com.u9porn.ui.images.meizitu.MeiZiTuFragment;
@@ -97,4 +101,12 @@ public interface ActivityComponent {
     void inject(Forum9IndexFragment forum9IndexFragment);
 
     void inject(HuaBanFragment huaBanFragment);
+
+    void inject(CommentFragment commentFragment);
+
+    void inject(AuthorFragment authorFragment);
+
+    void inject(AxgleFragment axgleFragment);
+
+    void inject(AxglePlayActivity axglePlayActivity);
 }

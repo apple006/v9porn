@@ -84,7 +84,7 @@ public class CommonHeaderInterceptor implements Interceptor {
         }
 
         Request.Builder requestBuilder = original.newBuilder();
-        requestBuilder.header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299");
+        requestBuilder.header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36");
         requestBuilder.header("Accept-Language", "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5");
         requestBuilder.header("Proxy-Connection", "keep-alive");
         requestBuilder.header("Cache-Control", "max-age=0");

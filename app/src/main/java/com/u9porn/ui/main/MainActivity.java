@@ -36,6 +36,7 @@ import com.u9porn.eventbus.LowMemoryEvent;
 import com.u9porn.eventbus.UrlRedirectEvent;
 import com.u9porn.service.UpdateDownloadService;
 import com.u9porn.ui.MvpActivity;
+import com.u9porn.ui.axgle.MainAxgleFragment;
 import com.u9porn.ui.basemain.BaseMainFragment;
 import com.u9porn.ui.download.DownloadActivity;
 import com.u9porn.ui.images.Main99MmFragment;
@@ -80,9 +81,10 @@ import butterknife.ButterKnife;
 public class MainActivity extends MvpActivity<MainView, MainPresenter> implements MainView {
     public final static int PORN9 = 2;
     final int PAV = 3;
+    final int AXGLE = 4;
     final int MEI_ZI_TU = 0;
     final int MM_99 = 1;
-    final int HUA_BAN=2;
+    final int HUA_BAN = 2;
     private static final String TAG = MainActivity.class.getSimpleName();
 
     @BindView(R.id.bottom_navigation_bar)
@@ -104,6 +106,7 @@ public class MainActivity extends MvpActivity<MainView, MainPresenter> implement
     private MainPavFragment mMainPavFragment;
     private MusicFragment mMusicFragment;
     private MineFragment mMineFragment;
+    private MainAxgleFragment mainAxgleFragment;
     private FragmentManager fragmentManager;
     private int selectIndex;
     private int firstTabShow;
@@ -170,6 +173,7 @@ public class MainActivity extends MvpActivity<MainView, MainPresenter> implement
                 .addItem(ResourceUtil.getDrawable(this, R.drawable.ic_file_download_black_24dp), "我的下载")
                 .addItem(ResourceUtil.getDrawable(this, R.drawable.ic_video_library_black_24dp), "V9PORN视频")
                 .addItem(ResourceUtil.getDrawable(this, R.drawable.ic_video_library_black_24dp), "ZhuGuLi视频")
+                .addItem(ResourceUtil.getDrawable(this, R.drawable.ic_video_library_black_24dp), "A*gle视频")
                 .setCheckedIndex(checkIndex)
                 .setOnSheetItemClickListener(new QMUIBottomSheet.BottomListSheetBuilder.OnSheetItemClickListener() {
                     @Override
@@ -325,6 +329,17 @@ public class MainActivity extends MvpActivity<MainView, MainPresenter> implement
                 presenter.setMainFirstTabShow(PAV);
                 mMain9PronVideoFragment = null;
                 break;
+            case AXGLE:
+                if (presenter.haveNotSetAxgleAddress()) {
+                    return;
+                }
+                if (mainAxgleFragment == null) {
+                    mainAxgleFragment = MainAxgleFragment.getInstance();
+                }
+                mCurrentFragment = FragmentUtils.switchContent(fragmentManager, mCurrentFragment, mainAxgleFragment, contentFrameLayout.getId(), itemId, isInnerReplace);
+                firstTabShow = AXGLE;
+                presenter.setMainFirstTabShow(AXGLE);
+                break;
             default:
         }
     }
@@ -360,7 +375,7 @@ public class MainActivity extends MvpActivity<MainView, MainPresenter> implement
                 secondTabShow = MEI_ZI_TU;
                 presenter.setMainSecondTabShow(MEI_ZI_TU);
                 mMain99MmFragment = null;
-                mMainHuaBanFragment=null;
+                mMainHuaBanFragment = null;
                 break;
             case MM_99:
                 if (mMain99MmFragment == null) {
@@ -370,11 +385,11 @@ public class MainActivity extends MvpActivity<MainView, MainPresenter> implement
                 secondTabShow = MM_99;
                 presenter.setMainSecondTabShow(MM_99);
                 mMaiMeiZiTuFragment = null;
-                mMainHuaBanFragment=null;
+                mMainHuaBanFragment = null;
                 break;
             case HUA_BAN:
-                if (mMainHuaBanFragment==null){
-                    mMainHuaBanFragment=MainHuaBanFragment.getInstance();
+                if (mMainHuaBanFragment == null) {
+                    mMainHuaBanFragment = MainHuaBanFragment.getInstance();
                 }
                 mCurrentFragment = FragmentUtils.switchContent(fragmentManager, mCurrentFragment, mMainHuaBanFragment, contentFrameLayout.getId(), itemId, isInnerReplace);
                 secondTabShow = HUA_BAN;

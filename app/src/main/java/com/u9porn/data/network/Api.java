@@ -20,4 +20,5 @@ public interface Api {
     String MM_99_DOMAIN_NAME = "mm_99_domain_name";
     String XICI_DAILI_DOMAIN_NAME = "xici_daili_domain_name";
     String HUA_BAN_DOMAIN_NAME = "huaban";
+    String AXGLE_DOMAIN_NAME = "axgle";
 }

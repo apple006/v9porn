@@ -1,13 +1,29 @@
 
-初步修复登录问题，目前收藏功能需要登录后解析一次视频方可使用，不兼容之前版本
+9*Porn Android 客户端，突破游客每天观看10次视频的限制，还可以下载视频
+
+### 目前具备功能
+1. 无限制观看（绝大部分用户）
+2. 登录注册收藏功能
+3. 下载视频
+4. 额外的图片板块以及其他视频板块
+5. 浏览论坛帖子功能
 
 ### 技术概览
 rxjava+retrofit+rxcache+mvp+jsoup+dagger2
 
 时间能力有限，欢迎各位提交PR
 
-
 ### 更新日志：
+
+------2018年8月19日 v1.0.5
+
+a*gle 视频地址解析来自项目[JAViewer](https://github.com/SplashCodes/JAViewer),感谢。
+
+1. 新增a*gle视频支持
+2. 9*porn播放界面调整，整合功能
+3. 修复ZhuGuLi加载更多视频失败
+4. 其他细小改善和bug修复
+
 
 ------2018年7月22日 v1.0.4
 1. 修复九妹图社图片问题（不过网站更新频繁，估计是防抓取了）
@@ -35,7 +51,7 @@ rxjava+retrofit+rxcache+mvp+jsoup+dagger2
 3. 修复因修改包名导致保存图片引发崩溃的bug
 4. 其他细小bug
 
-**注意：v1.0.1需要手动下载apk并卸载重新安装，否则程序崩溃且下版本无法自动更新**
+**注意：v1.0.1以下版本需要手动下载apk并卸载重新安装，否则程序崩溃且下版本无法自动更新**
 
 ### 编译环境
 
@@ -43,9 +59,9 @@ rxjava+retrofit+rxcache+mvp+jsoup+dagger2
 
 当前版本：
 
-Android Studio 3.1.1
+Android Studio 3.1.4
 
-Build #AI-173.4697961, built on April 4, 2018
+Build #AI-173.4907809, built on July 24, 2018
 
 JRE: 1.8.0_152-release-1024-b02 amd64
 
@@ -54,7 +70,7 @@ JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o
 Windows 10 10.0
 
 ### 其他
-觉得项目不错，给个赞赏，请我喝杯咖啡：
+觉得项目不错，给个start或赞赏，请我喝杯咖啡：
 
 ![赞赏](https://github.com/techGay/v9porn/blob/master/img/mm_reward_qrcode_1532268036853.png)
 

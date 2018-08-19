@@ -195,11 +195,13 @@ public class PictureViewerActivity extends MvpActivity<PictureViewerView, Pictur
 
     protected void goFullScreen() {
         isFullScreen = true;
+        tvNum.setVisibility(View.INVISIBLE);
         setUiFlags(true);
     }
 
     protected void exitFullScreen() {
         isFullScreen = false;
+        tvNum.setVisibility(View.VISIBLE);
         setUiFlags(false);
     }
 

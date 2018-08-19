@@ -76,4 +76,5 @@
     <string name="sure">确定</string>
     <string name="author">作者：</string>
     <string name="send_icon">sendIcon</string>
+    <string name="address_axgle">设置A*gle的API地址</string>
 </resources>

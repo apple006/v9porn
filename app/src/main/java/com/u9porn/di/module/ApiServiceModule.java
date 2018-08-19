@@ -9,6 +9,7 @@ import com.orhanobut.logger.Logger;
 import com.u9porn.cookie.SetCookieCache;
 import com.u9porn.cookie.SharedPrefsCookiePersistor;
 import com.u9porn.data.network.Api;
+import com.u9porn.data.network.apiservice.AxgleServiceApi;
 import com.u9porn.data.network.apiservice.Forum9PronServiceApi;
 import com.u9porn.data.network.apiservice.GitHubServiceApi;
 import com.u9porn.data.network.apiservice.HuaBanServiceApi;
@@ -106,6 +107,9 @@ public class ApiServiceModule {
         if (!TextUtils.isEmpty(addressHelper.getPavAddress())) {
             RetrofitUrlManager.getInstance().putDomain(Api.PA_DOMAIN_NAME, addressHelper.getPavAddress());
         }
+        if (!TextUtils.isEmpty(addressHelper.getAxgleAddress())) {
+            RetrofitUrlManager.getInstance().putDomain(Api.AXGLE_DOMAIN_NAME, addressHelper.getAxgleAddress());
+        }
         return RetrofitUrlManager.getInstance().with(builder).build();
     }
 
@@ -166,5 +170,11 @@ public class ApiServiceModule {
     @Provides
     HuaBanServiceApi providesHuaBanServiceApi(Retrofit retrofit) {
         return retrofit.create(HuaBanServiceApi.class);
+    }
+
+    @Singleton
+    @Provides
+    AxgleServiceApi providesAxgleServiceApi(Retrofit retrofit) {
+        return retrofit.create(AxgleServiceApi.class);
     }
 }

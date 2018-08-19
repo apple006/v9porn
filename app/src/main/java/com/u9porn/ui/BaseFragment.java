@@ -16,6 +16,8 @@ import com.u9porn.data.db.entity.V9PornItem;
 import com.u9porn.di.component.ActivityComponent;
 import com.u9porn.di.component.DaggerActivityComponent;
 import com.u9porn.di.module.ActivityModule;
+import com.u9porn.ui.main.MainActivity;
+import com.u9porn.ui.porn9video.play.BasePlayVideo;
 import com.u9porn.utils.PlaybackEngine;
 import com.u9porn.constants.Keys;
 
@@ -153,12 +155,19 @@ public abstract class BaseFragment extends Fragment {
         }
     }
 
-    protected void goToPlayVideo(V9PornItem v9PornItem, int playBackEngine) {
+    protected void goToPlayVideo(V9PornItem v9PornItem, int playBackEngine, int skipPage, int position) {
         Intent intent = PlaybackEngine.getPlaybackEngineIntent(getContext(), playBackEngine);
         intent.putExtra(Keys.KEY_INTENT_V9PORN_ITEM, v9PornItem);
-        if (activity != null) {
+        intent.putExtra(Keys.KEY_INTENT_CATEGORY_ITEM, category);
+        intent.putExtra(Keys.KEY_INTENT_SKIP_PAGE, skipPage);
+        intent.putExtra(Keys.KEY_INTENT_SCROLL_TO_POSITION, position);
+        if (activity != null && activity instanceof MainActivity) {
             startActivity(intent);
             activity.overridePendingTransition(R.anim.slide_in_right, R.anim.side_out_left);
+        } else if (activity != null && activity instanceof BasePlayVideo) {
+            BasePlayVideo basePlayVideo = (BasePlayVideo) activity;
+            basePlayVideo.setV9PornItems(v9PornItem);
+            basePlayVideo.initData();
         } else {
             showMessage("无法获取宿主Activity", TastyToast.INFO);
         }

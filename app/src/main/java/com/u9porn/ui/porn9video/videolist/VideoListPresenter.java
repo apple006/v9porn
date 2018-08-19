@@ -177,4 +177,8 @@ public class VideoListPresenter extends MvpBasePresenter<VideoListView> implemen
         }
         return pageList;
     }
+
+    public int getPage() {
+        return page - 1;
+    }
 }

@@ -20,6 +20,8 @@ import com.u9porn.data.model.UpdateVersion;
 import com.u9porn.data.model.User;
 import com.u9porn.data.model.VideoComment;
 import com.u9porn.data.db.entity.VideoResult;
+import com.u9porn.data.model.axgle.AxgleResponse;
+import com.u9porn.data.model.axgle.AxgleVideo;
 import com.u9porn.data.network.ApiHelper;
 import com.u9porn.data.prefs.PreferencesHelper;
 import com.u9porn.utils.UserHelper;
@@ -30,6 +32,8 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import io.reactivex.Observable;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
 
 /**
  * @author flymegoc
@@ -525,6 +529,16 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
+    public void setAxgleAddress(String address) {
+        mPreferencesHelper.setAxgleAddress(address);
+    }
+
+    @Override
+    public String getAxgleAddress() {
+        return mPreferencesHelper.getAxgleAddress();
+    }
+
+    @Override
     public void existProxyTest() {
         mApiHelper.existProxyTest();
     }
@@ -545,8 +559,33 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
+    public Observable<Boolean> testAxgle() {
+        return mApiHelper.testAxgle();
+    }
+
+    @Override
     public Observable<List<HuaBan.Picture>> findPictures(int categoryId, int page) {
         return mApiHelper.findPictures(categoryId, page);
+    }
+
+    @Override
+    public Observable<AxgleResponse> axgleVideos(int page, String o, String t, String type, String c, int limit) {
+        return mApiHelper.axgleVideos(page, o, t, type, c, limit);
+    }
+
+    @Override
+    public Observable<List<AxgleVideo>> searchAxgleVideo() {
+        return mApiHelper.searchAxgleVideo();
+    }
+
+    @Override
+    public Observable<List<AxgleVideo>> searchAxgleJavVideo() {
+        return mApiHelper.searchAxgleJavVideo();
+    }
+
+    @Override
+    public Call<ResponseBody> getPlayVideoUrl(String url) {
+        return mApiHelper.getPlayVideoUrl(url);
     }
 
     @Override

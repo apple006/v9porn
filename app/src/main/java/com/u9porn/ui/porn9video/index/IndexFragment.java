@@ -54,9 +54,14 @@ public class IndexFragment extends MvpFragment<IndexView, IndexPresenter> implem
 
     @Inject
     protected IndexPresenter indexPresenter;
+    private int position;
 
     public IndexFragment() {
         // Required empty public constructor
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 
     public static IndexFragment getInstance() {
@@ -99,7 +104,7 @@ public class IndexFragment extends MvpFragment<IndexView, IndexPresenter> implem
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 V9PornItem v9PornItems = mV9PornItemList.get(position);
-                goToPlayVideo(v9PornItems, presenter.getPlayBackEngine());
+                goToPlayVideo(v9PornItems, presenter.getPlayBackEngine(), 0, position);
             }
         });
 
@@ -128,6 +133,7 @@ public class IndexFragment extends MvpFragment<IndexView, IndexPresenter> implem
         mV9PornItemList.clear();
         mV9PornItemList.addAll(data);
         mV91PornAdapter.notifyDataSetChanged();
+        ((LinearLayoutManager)recyclerView.getLayoutManager()).scrollToPositionWithOffset(position,0);
     }
 
     @Override
