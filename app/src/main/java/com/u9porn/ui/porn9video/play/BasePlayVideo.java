@@ -141,18 +141,23 @@ public abstract class BasePlayVideo extends MvpActivity<PlayVideoView, PlayVideo
     private void initTab() {
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(commentFragment);
-        if ("index".equalsIgnoreCase(category.getCategoryValue())) {
-            IndexFragment indexFragment = IndexFragment.getInstance();
-            indexFragment.setCategory(category);
-            indexFragment.setPosition(position);
-            fragments.add(indexFragment);
-        } else {
-            VideoListFragment videoListFragment = VideoListFragment.getInstance();
-            videoListFragment.setCategory(category);
-            videoListFragment.setSkipPage(skipPage);
-            videoListFragment.setPosition(position);
-            fragments.add(videoListFragment);
+        if (category != null) {
+            if ("index".equalsIgnoreCase(category.getCategoryValue())) {
+                IndexFragment indexFragment = IndexFragment.getInstance();
+                indexFragment.setCategory(category);
+                indexFragment.setPosition(position);
+                fragments.add(indexFragment);
+            } else {
+                VideoListFragment videoListFragment = VideoListFragment.getInstance();
+                videoListFragment.setCategory(category);
+                videoListFragment.setSkipPage(skipPage);
+                videoListFragment.setPosition(position);
+                fragments.add(videoListFragment);
+            }
+        }else {
+            //TODO
         }
+
         fragments.add(authorFragment);
         playFragmentAdapter.setData(fragments);
         viewPagerPlay.setAdapter(playFragmentAdapter);

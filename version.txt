@@ -1,10 +1,7 @@
 {
-"apkDownloadUrl": "https://raw.githubusercontent.com/techGay/v9porn/master/apk/app-v1.0.5.apk",
-"updateMessage": "1. 新增a*gle视频支持\n
-                  2. 9*porn播放界面调整，整合功能\n
-                  3. 修复ZhuGuLi加载更多视频失败\n
-                  4. 其他细小改善和bug修复
+"apkDownloadUrl": "https://raw.githubusercontent.com/techGay/v9porn/master/apk/app-v1.0.6.apk",
+"updateMessage": "1. 简单修复不是从主界面进入9*pron播放界面崩溃的bug
 ",
-"versionCode": 6,
-"versionName": "1.0.5"
+"versionCode": 7,
+"versionName": "1.0.6"
 }

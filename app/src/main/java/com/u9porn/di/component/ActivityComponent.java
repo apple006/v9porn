@@ -14,6 +14,7 @@ import com.u9porn.ui.images.viewimage.PhotoImageActivity;
 import com.u9porn.ui.porn9video.author.AuthorFragment;
 import com.u9porn.ui.porn9video.comment.CommentFragment;
 import com.u9porn.ui.porn9video.favorite.FavoriteActivity;
+import com.u9porn.ui.porn9video.favorite.FavoriteFragment;
 import com.u9porn.ui.porn9video.history.HistoryActivity;
 import com.u9porn.ui.images.meizitu.MeiZiTuFragment;
 import com.u9porn.ui.images.mm99.Mm99Fragment;
@@ -109,4 +110,6 @@ public interface ActivityComponent {
     void inject(AxgleFragment axgleFragment);
 
     void inject(AxglePlayActivity axglePlayActivity);
+
+    void inject(FavoriteFragment favoriteFragment);
 }

@@ -15,6 +15,10 @@ rxjava+retrofit+rxcache+mvp+jsoup+dagger2
 
 ### 更新日志：
 
+------2018年8月19日 v1.0.6
+
+1. 修复#49 #51导致的崩溃的bug
+
 ------2018年8月19日 v1.0.5
 
 a*gle 视频地址解析来自项目[JAViewer](https://github.com/SplashCodes/JAViewer),感谢。
