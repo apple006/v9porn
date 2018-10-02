@@ -15,7 +15,7 @@ rxjava+retrofit+rxcache+mvp+jsoup+dagger2
 
 ### 更新日志：
 
-------2018年8月19日 v1.0.7
+------2018年10月2日 v1.0.7
 
 本版本代码改动较大，可能隐藏有较多的bug
 
