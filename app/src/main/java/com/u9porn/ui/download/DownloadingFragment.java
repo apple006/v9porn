@@ -23,7 +23,6 @@ import com.orhanobut.logger.Logger;
 import com.sdsmdg.tastytoast.TastyToast;
 import com.u9porn.R;
 import com.u9porn.adapter.DownloadVideoAdapter;
-import com.u9porn.data.DataManager;
 import com.u9porn.data.db.entity.V9PornItem;
 import com.u9porn.service.DownloadVideoService;
 import com.u9porn.ui.MvpFragment;
@@ -92,7 +91,6 @@ public class DownloadingFragment extends MvpFragment<DownloadView, DownloadPrese
     @NonNull
     @Override
     public DownloadPresenter createPresenter() {
-        getActivityComponent().inject(this);
         return downloadPresenter;
 
     }
@@ -178,7 +176,7 @@ public class DownloadingFragment extends MvpFragment<DownloadView, DownloadPrese
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 

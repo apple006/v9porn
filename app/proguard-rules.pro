@@ -250,3 +250,7 @@ public static java.lang.String TABLENAME;
 -keepattributes *Annotation*
 
 -keep class cn.qqtheme.framework.entity.** { *;}
+
+### bugly
+-dontwarn com.tencent.bugly.**
+-keep public class com.tencent.bugly.**{*;}

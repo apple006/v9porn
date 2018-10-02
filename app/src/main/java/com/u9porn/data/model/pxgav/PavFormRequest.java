@@ -1,4 +1,4 @@
-package com.u9porn.data.model;
+package com.u9porn.data.model.pxgav;
 
 import com.google.gson.annotations.SerializedName;
 
