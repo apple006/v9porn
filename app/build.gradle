@@ -9,8 +9,8 @@ android {
         applicationId "com.u9porn"
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode 8
-        versionName "1.0.7"
+        versionCode 9
+        versionName "1.0.8"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
@@ -139,4 +139,5 @@ dependencies {
 
     implementation 'com.tencent.bugly:crashreport:2.6.6.1'
     implementation 'com.tencent.bugly:nativecrashreport:3.3.1'
+    implementation 'com.aliyun.ams:alicloud-android-hotfix:3.2.6'
 }

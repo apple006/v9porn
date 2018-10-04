@@ -15,6 +15,10 @@ rxjava+retrofit+rxcache+mvp+jsoup+dagger2
 
 ### 更新日志：
 
+------2018年10月4日 v1.0.8
+1. 修复适配JiaoZiVideoPlayer播放引擎
+2. 修复9*PORN除主页外其他分类打开崩溃的Bug
+
 ------2018年10月2日 v1.0.7
 
 本版本代码改动较大，可能隐藏有较多的bug

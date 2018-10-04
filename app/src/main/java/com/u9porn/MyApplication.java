@@ -1,7 +1,5 @@
 package com.u9porn;
 
-import android.content.Context;
-import android.support.multidex.MultiDex;
 import android.support.v7.app.AppCompatDelegate;
 
 import com.helper.loadviewhelper.load.LoadViewHelper;
@@ -52,12 +50,6 @@ public class MyApplication extends DaggerApplication {
         }
         CrashReport.initCrashReport(getApplicationContext(), "", BuildConfig.DEBUG);
         BGASwipeBackHelper.init(this, null);
-    }
-
-    @Override
-    protected void attachBaseContext(Context base) {
-        super.attachBaseContext(base);
-        MultiDex.install(this);
     }
 
     public static MyApplication getInstance() {

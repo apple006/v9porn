@@ -23,6 +23,7 @@ import com.qmuiteam.qmui.widget.dialog.QMUIBottomSheet;
 import com.qmuiteam.qmui.widget.dialog.QMUIDialog;
 import com.qmuiteam.qmui.widget.dialog.QMUIDialogAction;
 import com.sdsmdg.tastytoast.TastyToast;
+import com.taobao.sophix.SophixManager;
 import com.u9porn.BuildConfig;
 import com.u9porn.R;
 import com.u9porn.constants.Constants;
@@ -140,7 +141,7 @@ public class MainActivity extends MvpActivity<MainView, MainPresenter> implement
         firstTabShow = presenter.getMainFirstTabShow();
         secondTabShow = presenter.getMainSecondTabShow();
         doOnTabSelected(selectIndex);
-
+        SophixManager.getInstance().queryAndLoadNewPatch();
     }
 
 

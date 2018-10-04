@@ -19,13 +19,12 @@ import com.u9porn.ui.porn9video.author.AuthorActivity;
 import com.u9porn.ui.porn9video.author.AuthorActivityModule;
 import com.u9porn.ui.porn9video.favorite.FavoriteActivity;
 import com.u9porn.ui.porn9video.favorite.FavoriteActivityModule;
-import com.u9porn.ui.porn9video.favorite.FavoriteFragment;
 import com.u9porn.ui.porn9video.history.HistoryActivity;
 import com.u9porn.ui.porn9video.history.HistoryActivityModule;
-import com.u9porn.ui.porn9video.play.BasePlayVideo;
-import com.u9porn.ui.porn9video.play.BasePlayVideoModule;
+import com.u9porn.ui.porn9video.play.ExoPlayerVideoModule;
 import com.u9porn.ui.porn9video.play.ExoMediaPlayerActivity;
 import com.u9porn.ui.porn9video.play.JiaoZiVideoPlayerActivity;
+import com.u9porn.ui.porn9video.play.JiaoZiVideoPlayerModule;
 import com.u9porn.ui.porn9video.search.SearchActivity;
 import com.u9porn.ui.porn9video.search.SearchActivityModule;
 import com.u9porn.ui.porn9video.user.UserLoginActivity;
@@ -77,8 +76,12 @@ public abstract class ActivityBindingModule {
     abstract SearchActivity searchActivity();
 
     @PerActivity
-    @ContributesAndroidInjector(modules = BasePlayVideoModule.class)
+    @ContributesAndroidInjector(modules = ExoPlayerVideoModule.class)
     abstract ExoMediaPlayerActivity exoMediaPlayerActivity();
+
+    @PerActivity
+    @ContributesAndroidInjector(modules = JiaoZiVideoPlayerModule.class)
+    abstract JiaoZiVideoPlayerActivity jiaoZiVideoPlayerActivity();
 
     @PerActivity
     @ContributesAndroidInjector(modules = UserLoginActivityModule.class)
